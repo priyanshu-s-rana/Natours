@@ -3,7 +3,7 @@ import axios from "axios"
 import { show_alert } from "./alert";
 export const book_tour = async tour_id =>{
     try{//! Get checkout session from API
-    const session = await axios(`http://127.0.0.1:8000/api/v1/bookings/checkout-session/${tour_id}`);
+    const session = await axios(`/api/v1/bookings/checkout-session/${tour_id}`);
     //console.log(session);
 
     //! Create checkout form + charge the  credit card

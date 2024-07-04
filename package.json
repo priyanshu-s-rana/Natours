@@ -8,9 +8,8 @@
     "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
     "build:start": "browserify public/js/webmap.js -o public/js/bundle.js & cp node_modules/leaflet/dist/leaflet.css public/css/leaflet.css",
-    "build:prod": "browserify public/js/webmap.js -o public/js/bundle.js & cp node_modules/leaflet/dist/leaflet.css public/css/leaflet.css",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js --public-url ./ ",
-    "build:js": "parcel watch public/js/index.js --out-dir public/js --out-file bundle.js",
+    "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js --public-url ./",
     "extra": " watchify mapbox.js -o public/js/mapbox.js --delay=10"
   },
   "author": "",
@@ -21,6 +20,7 @@
     "@xterm/xterm": "^5.5.0",
     "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
+    "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",

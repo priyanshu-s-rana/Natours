@@ -35,7 +35,7 @@ exports.getAll = Model=>catch_async(async (req, res,next) => {
 
 exports.deleteOne = Model => catch_async(async (req, res,next) => {
         const id = req.params.id
-        console.log(Model);
+        // console.log(Model);
         const doc = await Model.findByIdAndDelete(id);
         if(!doc){
             return next(new App_error("No document found with the given ID",404)) // NOt found
@@ -48,7 +48,7 @@ exports.deleteOne = Model => catch_async(async (req, res,next) => {
 
 exports.updateOne = Model => catch_async(async(req,res,next)=>{
         const id = req.params.id;
-        console.log(id);
+        // console.log(id);
         //await Tour.updateOne({_id:id},{$set : req.body});
         //! This is much better than above method. As it returns the updated document and runs all validotors again.
         const doc = await Model.findByIdAndUpdate(id, req.body, {

@@ -51,7 +51,7 @@ const tourSchema = mongoose.Schema({
        validate :{ 
        message : `Discout price ({VALUE}) should be less than actual price`,
         validator :function(val){
-           console.log(this.price);
+        //    console.log(this.price);
            return val < this.price; // not gonna work on update. only points to current doc on NEW document creation.
        },}
     },

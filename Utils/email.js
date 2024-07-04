@@ -11,7 +11,7 @@ module.exports = class Email{
     }
 
     new_transport(){
-        console.log(process.env.NODE_ENV);
+        // console.log(process.env.NODE_ENV);
         if(process.env.NODE_ENV === 'production'){
 
             return nodemailer.createTransport({
@@ -60,10 +60,10 @@ module.exports = class Email{
         //! Create a transport and send email
         await this.new_transport().sendMail(mail_options, (err, info) => {
             if (err) {
-                return console.log(error);
+                return console.log(err);
             }
         })
-        console.log('e');
+        // console.log('e');
     }
 
     async send_welcome(){
